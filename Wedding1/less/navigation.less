@@ -1,0 +1,60 @@
+.navigation{
+    width:100%;
+    padding: 20px ;
+    display: flex;
+    background: @nav_bgcolor;
+    justify-content:space-between;
+
+    position: fixed;
+      z-index: 999;
+
+    @media @tablet{
+        padding: 10px ;
+        flex-direction: column;
+    }
+    .nav_title{
+        width:50%;
+        display: flex;
+        p{
+            font-size: 1rem;
+            text-align: center;
+        }
+        @media @tablet{
+            width:100%;
+            justify-content: center;
+        }
+        @media @phone{
+            
+            img{
+                width: 30px;
+                height: 30px;
+                
+            }
+        }
+        img{
+            width: 45px;
+            height: 45px;
+            
+        }
+        
+}
+    nav{
+        width:50%;
+        padding: 10px 0 0 0;
+        display: flex;
+        justify-content:space-evenly;
+        a{
+            width:30%;
+            height:40px;
+            .custom-button(@nav_btcolor,black);
+        }
+        @media @tablet{
+            padding: 0 0 0 0;
+            width:100%;
+            a{
+                width:35%;
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,185 @@
+.header_content{
+    padding: 150px 0 0 0;
+    height:80vh;
+    background-image: url("../img/rings_flower.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   display:flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items:center;
+   @media @tablet{
+    height:100vh;
+    padding: 20vh 0 0 0;
+}
+   @media @phone{
+       width:100%;
+       height:100vh;
+       padding: 180px 0 0 0;
+       
+       
+   }
+
+   .header_content_text{
+       width:60%;
+       @media @phone{
+           width:100%
+       }
+       h1{
+          font-size: 6rem;
+          text-align: center;
+          @media @tablet{
+            font-size: 4rem;
+        }
+          @media @phone{
+              display:none;
+          }
+       }
+       h4{
+          text-align: center;
+          padding:50px 5px 20px 5px;
+          @media @phone{
+              font-size:2rem;
+              padding:20px 20px 20px 50px;
+          }
+        } 
+   }
+   .header_button{
+       width:100%;
+       @media @phone{
+           width:100%;
+           padding:0 0 20px 0;
+       }
+       nav{
+        display: flex;
+        justify-content:center;
+        a{
+            width:20%;
+            .custom-button(@nav_btcolor,black);
+        }
+        @media @tablet{
+            width:100%;
+            a{
+                width:45%;
+            }
+        }
+    
+       }
+   }
+   
+   
+
+}   
+      
+.main_content{
+    display:flex;
+    @media @tablet{
+        flex-direction: column;
+    }
+    p{
+        text-align: center;
+    }
+    
+    .planner_content{
+        width:50vw;
+        background:@planner_color;
+        @media @tablet{
+            width:100%;
+        }
+    }
+    .couples_content{
+        width:50vw;
+        background:@couples_color;
+        @media @tablet{
+            width:100%;
+        }
+    }
+
+    
+    h2{
+        text-align: center;
+        padding: 30px 0;
+    }
+    p{
+        padding:0 40px;
+    }
+    h4{
+        padding:15px 0 10px 40px;
+    }
+    .feature_list{
+        padding:0 0 10px 0;
+        display:flex;
+        justify-content: space-evenly;
+        li{
+            font-size:2rem;
+            list-style-type: circle;
+        }
+        @media @phone{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    img{
+        width:50%;
+        margin:20px 25%;
+        @media @phone{
+            width:80%;
+            margin:20px 10%;
+        }
+    }
+    .feature_button_p{
+        display:none;
+        @media @tablet{
+            display:block;
+            margin:5px auto 20px auto;
+            nav{
+                display: flex;
+                justify-content:center;
+                a{
+                    width:80%;
+                    .custom-button(black,@couples_color);
+                }
+            }
+               
+        }
+    }
+    .feature_button_c{
+        display:none;
+        @media @tablet{
+            display:block;
+            margin:5px auto 20px auto;
+            nav{
+                display: flex;
+                justify-content:center;
+                a{
+                    width:80%;
+                    .custom-button(black,@planner_color);
+                }
+            }
+               
+        }
+    }
+}
+.bottom_content{
+    background: linear-gradient(90deg, @planner_color 50%, rgba(0, 0, 0, 0) 30%), @couples_color;
+    padding: 10px 0 20px 0;
+    @media @tablet{
+        display:none;
+    }
+    .bottom_button{
+        nav{
+         display: flex;
+         justify-content:center;
+         a{
+             width:50%;
+             .custom-button(@nav_btcolor,black);
+         }
+         @media @tablet{
+             display:none;
+         }
+     
+        }
+    }
+}
