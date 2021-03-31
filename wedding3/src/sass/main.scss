@@ -1,0 +1,830 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+* === GENERAL STYLES ===
+*/
+
+/*
+* — Fonts —
+*/
+$base__font--xs: 0.8rem;
+$base__font--s: 1.1rem;
+$base__font--sm: 1.2rem;
+$base__font--m: 1.5rem;
+$base__font--l: 1.9rem;
+$base__font--xl: 2.5rem;
+$base__font--xxl: 2.9rem;
+
+//headings
+$h4__color: 1.4rem;
+
+/*
+* — Colors —
+*/
+$lightWhite: #f9f7f7;
+$lightRose: #F0D6C4;
+$lightPurple: #7D6167;
+$purple: #563635;
+$darkPurple: #412827;
+$lightGreen: #A0A083;
+$green: #90914F;
+$darkGreen: #0e2113;
+$textColor: #4b4a4a;
+
+$borderRadius: 10px;
+$boxShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$subtleBoxShadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+$transition: 0.3s ease;
+
+html, body {
+	height: 100%;
+}
+button, input, select, textarea {
+	font-family : inherit;
+	font-size   : 100%;
+}
+body {
+	font-style: 62,5%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	box-sizing: border-box;
+	color: $textColor;
+}
+
+/*
+* === GENERAL STYLES SHARED WITH PAGES
+*/
+h2 {
+	font-size: $base__font--xl;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+h3 {
+	font-size: $base__font--l;
+}
+h4 {
+	font-size: $base__font--m;
+}
+h5 {
+	font-size: $base__font--sm;
+}
+.h4__color {
+	font-size: $h4__color;
+	color: $darkGreen;
+	text-transform: uppercase;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+	box-shadow: $subtleBoxShadow;
+}
+.logo {
+	height: 70px;
+}
+.header__logo {
+	margin-top: 1.4rem;
+	transition: $transition;
+}
+.header__scroll {
+	background: white;
+	.header__logo {
+		height: 40px;
+	}
+	.nav__list {
+		margin: 1rem auto;
+	}
+}
+.page-content {
+	padding-top: 11.5rem;
+}
+.button {
+	border-radius: $borderRadius;
+	border: none;
+	padding: 1rem 2rem;
+	font-size: $base__font--s;
+	cursor: pointer;
+}
+.nav__link {
+	margin: auto .7rem;
+	font-size: $base__font--s;
+	&:link, &:visited, &:active {
+		text-decoration: none;
+		color: $textColor;
+	}
+}
+.main-content__wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.text__heading {
+	margin-bottom: 2rem;
+}
+//footer
+.footer {
+	background: linear-gradient(to bottom right, $darkGreen, $purple);
+	padding: 1.5rem 1rem 1.5rem 1rem;
+	color: $lightWhite;
+	a {
+		color: $lightRose;
+		text-decoration: none;
+	}
+}
+.footer__text {
+	line-height: 28px;
+	h4 {
+		color: $lightGreen;
+		font-size: $base__font--m;
+		margin-bottom: 0.6rem;
+	}
+	p {
+		font-size: $base__font--s;
+	}
+}
+.footer__column {
+	margin-top: 1.7rem;
+}
+.footer__column:first-of-type {
+	margin-top: 0;
+}
+.logo--footer {
+	opacity: 0.7;
+}
+.social--footer {
+	margin-top: 1rem;
+	img {
+		height: 50px;
+	}
+}
+.copy {
+	font-size: $base__font--xs;
+	opacity: 0.7;
+	margin-top: 3rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.44);
+	padding-top: 1.2rem;
+}
+.created, {
+	font-size: $base__font--xs;
+	opacity: 0.7;
+	margin-top: 1rem;
+}
+
+/*
+* === HOMEPAGE STYLES ===
+*/
+/*
+* === hero image ===
+*/
+.header--home {
+	box-shadow: none;
+	background: rgba(14, 8, 1, 0.87);
+	background: rgba(10, 16, 9, 0.96);
+}
+.hero {
+	background-image: url("../assets/pexels/couple.jpg");
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	position: relative;
+}
+.nav__list {
+	display: flex;
+	margin: 1.5rem auto;
+}
+.nav__link--home {
+	&:link, &:visited,  {
+		color: $lightWhite;
+	}
+}
+.hero__text {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 4rem 0rem;
+	position: absolute;
+	top: 45%;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	h1 {
+	font-size: $base__font--l;
+	text-transform: uppercase;
+	color: $lightWhite;
+	}
+}
+.header__button {
+	background: transparent;
+	color: $lightWhite;
+	border: 2px solid $lightWhite;
+	margin-top: 2rem;
+	transition: $transition;
+	&:hover {
+		background: $lightWhite;
+		color: $textColor;
+	}
+}
+.social--hero {
+	top: 90%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.social__img {
+	height: 60px;
+	padding: .4rem;
+}
+
+/*
+* === mission section===
+*/
+.mission {
+	margin: 5rem auto;
+}
+.mission__text {
+	background: $lightWhite;
+	z-index: 1;
+	box-shadow: $boxShadow;
+	padding: 3rem;
+	line-height: 2.3rem;
+}
+.mission__img {
+	background-image: url("../assets/pexels/couple-heart.jpg");
+	background-position: center center;
+	background-size: cover;
+	align-self: flex-end;
+	height: 30rem;
+}
+
+/*
+* === icon tiles section===
+*/
+.main-tiles {
+	h3 {
+		margin: 6rem auto 2rem auto;
+	}
+	h4 {
+		display: inline-block;
+		color: $purple;
+		margin: 2rem auto;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid white;
+	}
+	p {
+		font-size: $base__font--s;
+	}
+}
+.icon-tiles__tile {
+	padding: 4rem 2rem 6rem 2rem;
+	transition: 0.5s ease-in-out;
+}
+.icon-tiles__tile:nth-child(odd) {
+	h4 {
+	border-bottom: 1px solid $lightPurple; 
+	}
+}
+.icon-tiles__tile:nth-child(even) {
+	background: $purple;
+	h4, p {
+		color: white;
+	}
+}
+.icon-tiles__img {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 80px;
+}
+.icon-tiles__img-one {
+	background-image: url("../assets/icons/bouquet.svg");
+}
+.icon-tiles__img-two {
+	background-image: url("../assets/icons/church-hover.svg");
+}
+.icon-tiles__img-three {
+	background-image: url("../assets/icons/wedding-cake.svg");
+}
+.icon-tiles__img-four {
+	background-image: url("../assets/icons/camera-hover.svg");
+	height: 70px;
+}
+
+/*
+* === banner section ===
+*/
+.banner {
+	margin: 3rem auto 3rem auto;
+	background-image: url("../assets/pexels/banner-bg.jpeg");
+	background-position: center;
+	height: 18rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	h3 {
+		margin-bottom: 1.5rem;
+	}
+}
+.button--color {
+	background: $darkGreen;
+	color: $lightWhite;
+}
+
+/*
+* === SERVICES PAGE STYLES ===
+*/
+//services description
+.services__text__descritpion {
+	padding: 4rem 2rem;
+	color: $lightWhite;
+	background-image: url("../assets/pexels/bouqet-roses-purple-slim.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.services__text__heading {
+	max-width: 550px;
+	margin: 0 auto;
+	h4 {
+		color: $lightRose;
+	}
+	h2 {
+		color: $lightWhite;
+	}
+	p {
+		margin-top: 1.3rem;
+		line-height: 33px;
+		font-size: $base__font--s;
+	}
+}
+//services content
+.page-content--services {
+	padding-top: 10rem;
+}
+//timeline
+.offer__text__heading {
+	margin-top: 4rem;
+}
+.timeline {
+	top: 2rem;
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto 6rem auto;
+}
+.timeline__img {
+	height: 80px;
+	margin-bottom: 1.5rem;
+}
+.timeline__content {
+	p {
+		font-size: $base__font--s;
+	}
+	padding: 2rem;
+	}
+.timeline::after {
+	content: "";
+	width: 7px;
+	background: $lightGreen;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 50%;
+	border-radius: 10px;
+}
+.timeline__container {
+	position: relative;
+	width: 50%;
+	border-radius: 8px;
+}
+.timeline__container::after {
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: white;
+	border-radius: 50%;
+	border: 3px solid $lightPurple;
+	top: 10px;
+	right: -52px;
+	z-index: 1;
+}
+.timeline__left__container {
+	left: 0;
+	background: $lightWhite;
+}
+.timeline__right__container {
+	left: 50%;
+	background: $purple;
+	color: $lightWhite;
+}
+.timeline__right__container::after {
+	left: -48px;
+}
+.timeline__left__container::before {
+	content: '';
+	height: 0;
+	width: 0;
+	top: 10px;
+	left: -10px;
+	position: absolute;
+	z-index: 1;
+	border: medium solid $lightWhite;
+	border-width:  15px 15px 15px 0px;
+	border-color:  transparent $lightWhite transparent transparent ;
+}
+.timeline__right__container::before {
+	content: '';
+	height: 0;
+	width: 0;
+	top: 10px;
+	left: -10px;
+	position: absolute;
+	z-index: 1;
+	border: medium solid $purple;
+	border-width:  15px 15px 15px 0px;
+	border-color:  transparent  $purple transparent transparent;
+}
+
+/*
+* === PORTFOLIO PAGE STYLES ===
+*/
+.portfolio {
+	max-width: 1800px;
+	margin: 0 auto;
+}
+.portolio__text__heading {
+	margin-top: 2.5rem;
+}
+.portfolio-images {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 400px);
+	grid-auto-rows: 300px;
+	grid-auto-flow: dense;
+	grid-gap: 15px;
+	justify-content: center;
+	margin-bottom: 2.5rem;
+}
+.img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	box-shadow: $boxShadow;
+}
+.img-one {
+	background-image: url("../assets/pexels/wedding-room.jpeg");
+}
+.img-two {
+	background-image: url("../assets/pexels/bouqets.jpeg");
+}
+.img-three {
+	background-image: url("../assets/pexels/wedding-cake2.jpeg");
+}
+.img-four {
+	background-image: url("../assets/pexels/couple-green.jpeg");
+}
+.img-five {
+	background-image: url("../assets/pexels/couple-mountain.jpeg");
+}
+.img-six {
+	background-image: url("../assets/pexels/table-decoration.jpeg");
+}
+.img-seven {
+	background-image: url("../assets/pexels/bride-girls.jpeg");
+}
+.img-eight {
+	background-image: url("../assets/pexels/decoration.jpeg");
+}
+.img-nine {
+	background-image: url("../assets/pexels/bouqet-roses.jpeg");
+}
+.img-ten {
+	background-image: url("../assets/pexels/couple-smile.jpeg");
+}
+.img-eleven {
+	background-image: url("../assets/pexels/wedding-rings.jpeg");
+}
+.img-twelve {
+	background-image: url("../assets/pexels/dress.jpeg");
+}
+.img-thirteen {
+	background-image: url("../assets/pexels/decoration-pink.jpeg");
+}
+.img-fourteen {
+	background-image: url("../assets/pexels/paris-wedding-crop.jpeg");
+}
+.img-fifteen {
+	background-image: url("../assets/pexels/wooden.jpeg");
+}
+.img-sixteen {
+	background-image: url("../assets/pexels/beach.jpeg");
+}
+
+/*
+* === CONTACT PAGE STYLES ===
+*/
+//contact details
+.contact__text__heading {
+	margin-top: 2.5rem;
+}
+.contact-details {
+	background: $lightWhite;
+}
+.contact-details__column {
+	padding-top: 2.7rem;
+	max-width: 300px;
+	margin: 0 auto;
+	h5 {
+		color: $purple;
+		font-weight: bold;
+	}
+	h5, p {
+		line-height: 1.8rem;
+	}
+	p {
+		margin-top: 1rem;
+		font-size: $base__font--s;
+	}
+}
+.contact-details__address {
+	padding-bottom: 2.7rem;
+}
+//contact-form
+.form__wrapper {
+	max-width: 650px;
+	margin: 0 auto 2rem auto;
+	text-align: left;
+	padding: 1.3rem;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: auto 2rem;
+}
+.form__label {
+	font-size: $base__font--sm;
+		padding: 0.5rem 0.3rem;
+}
+.form__input, .form__select {
+	padding: 1rem 0.3rem;
+}
+.form__textarea {
+	height: 10rem;
+	border-radius: $borderRadius;
+}
+.form__input, .form__textarea, .form__select {
+	background: $lightWhite;
+	border: 1px solid #d8d5d5;
+	border-radius: 5px;
+}
+.form__label, .button--form {
+	margin-top: 1.7rem;
+}
+.input-submit {
+	cursor: pointer;
+}
+
+
+/*
+* === MEDIA QUERIES ===
+*/
+@media screen and (max-width: 880px) {
+	//services
+	.timeline {
+		margin: 0 2rem 5rem 2rem;
+	}
+	.timeline__container {
+		width: 100%;
+		margin-left: 1rem;
+	}
+	.timeline__right__container {
+		left: 0;
+		margin-top: 1.3rem;
+		margin-bottom: 1.3rem;
+	}
+	.timeline::after {
+		left: -18px;
+		width: 5px;
+	}
+	.timeline__container::after {
+		left: -45px;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+@media screen and (min-width: 881px) {
+	//footer 
+	.footer__inner-wrapper {
+		display: flex;
+		max-width: 1300px;
+		margin: 0 auto;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	//main page
+	.hero__text {
+		h1 {
+		font-size: $base__font--xxl;
+		}
+	}
+	.nav__link {
+		font-size: $base__font--m;
+	}
+	.button {
+		font-size: $base__font--m;
+	}
+	.banner {
+		height: 30rem;
+		h3 {
+			font-size: $base__font--xl;
+		}
+	}
+	//services
+	.timeline__left__container {
+		margin-left: -2rem;
+	}
+	.timeline__left__container::before {
+		top: 12px;
+		left: 395px;
+		border-width:  15px 0 15px 15px;
+		border-color:  transparent transparent transparent $lightWhite;
+	}
+	.timeline__right__container {
+		margin-left: 2rem;
+	}
+	//contact
+	.contact-details__inner-wrapper {
+		max-width: 1300px;
+		margin: 0 auto; 
+		display: flex;
+		h5 {
+			margin-top: .6rem;
+		}
+	}
+	.contact-details__column {
+		p {
+			font-size: $base__font--sm;
+		}
+	}
+}
+
+@media screen and (min-width: 1087px) {
+	//main page
+	.hero__text {
+		top: 55%;
+	}
+	.social--hero {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		flex-direction: column;
+		margin-right: 4rem;
+		width: auto;
+	}
+	.mission {
+		display: flex;
+		justify-content: center;
+		height: 40rem;
+	}
+	.mission__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 45%;
+		margin-right: -3rem;
+		height: 30rem;
+		font-size: 1.3rem;
+	}
+	.mission__img {
+		width: 45%;
+		box-shadow: $boxShadow;
+	}
+	.main-tiles {
+		p {
+			color: transparent;
+		}
+	}
+	.icon-tiles__wrapper {
+	display: flex;
+	}
+	.icon-tiles__tile {
+		margin: 0.5rem;
+		width: 25%;
+		box-shadow: $subtleBoxShadow;
+		&:hover {
+			box-shadow: $boxShadow;
+			width: 30%;
+		}
+	}
+	.icon-tiles__img-two {
+		background-image: url("../assets/icons/church.svg");
+	}
+	.icon-tiles__img-four {
+		background-image: url("../assets/icons/camera.svg");
+		height: 70px;
+	}
+	.icon-tiles__one:hover {
+		.icon-tiles__img-one {
+			background-image: url("../assets/icons/bouquet-hover.svg");
+		}
+	}
+	.icon-tiles__two:hover {
+		.icon-tiles__img-two {
+			background-image: url("../assets/icons/church-hover.svg");
+		}
+	}
+	.icon-tiles__three:hover {
+		.icon-tiles__img-three {
+			background-image: url("../assets/icons/wedding-cake-hover.svg");
+		}
+	}
+	.icon-tiles__four:hover {
+		.icon-tiles__img-four {
+			background-image: url("../assets/icons/camera-hover.svg");
+		}
+	}
+	.icon-tiles__tile:nth-child(odd) {
+		h4 {
+		border-bottom: none; 
+		}
+		&:hover {
+			h4 {
+				border-bottom: 1px solid $lightWhite; 
+			}
+		}
+	}
+	.icon-tiles__tile:nth-child(even) {
+	background: none;
+		h4 {
+			color: $purple;
+		}
+	}
+	.icon-tiles__tile {
+	border-radius: $borderRadius;
+	&:hover {
+		background: $purple;
+		h4, p {
+			color: $lightWhite; 
+		}
+	}
+}
+	.icon-tiles__camera {
+		.img {
+			height: 30px;
+		}
+	}
+//contact--form
+	.form__label {
+		font-size: $base__font--m;
+	}
+}

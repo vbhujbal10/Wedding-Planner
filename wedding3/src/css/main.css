@@ -1,0 +1,692 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+* === GENERAL STYLES ===
+*/
+/*
+* — Fonts —
+*/
+/*
+* — Colors —
+*/
+html, body {
+  height: 100%; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%; }
+
+body {
+  font-style: 62,5%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  box-sizing: border-box;
+  color: #4b4a4a; }
+
+/*
+* === GENERAL STYLES SHARED WITH PAGES
+*/
+h2 {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+
+h3 {
+  font-size: 1.9rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.2rem; }
+
+.h4__color {
+  font-size: 1.4rem;
+  color: #0e2113;
+  text-transform: uppercase; }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+
+.logo {
+  height: 70px; }
+
+.header__logo {
+  margin-top: 1.4rem;
+  transition: 0.3s ease; }
+
+.header__scroll {
+  background: white; }
+  .header__scroll .header__logo {
+    height: 40px; }
+  .header__scroll .nav__list {
+    margin: 1rem auto; }
+
+.page-content {
+  padding-top: 11.5rem; }
+
+.button {
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer; }
+
+.nav__link {
+  margin: auto .7rem;
+  font-size: 1.1rem; }
+  .nav__link:link, .nav__link:visited, .nav__link:active {
+    text-decoration: none;
+    color: #4b4a4a; }
+
+.main-content__wrapper {
+  max-width: 1400px;
+  margin: 0 auto; }
+
+.text__heading {
+  margin-bottom: 2rem; }
+
+.footer {
+  background: linear-gradient(to bottom right, #0e2113, #563635);
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  color: #f9f7f7; }
+  .footer a {
+    color: #F0D6C4;
+    text-decoration: none; }
+
+.footer__text {
+  line-height: 28px; }
+  .footer__text h4 {
+    color: #A0A083;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem; }
+  .footer__text p {
+    font-size: 1.1rem; }
+
+.footer__column {
+  margin-top: 1.7rem; }
+
+.footer__column:first-of-type {
+  margin-top: 0; }
+
+.logo--footer {
+  opacity: 0.7; }
+
+.social--footer {
+  margin-top: 1rem; }
+  .social--footer img {
+    height: 50px; }
+
+.copy {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.44);
+  padding-top: 1.2rem; }
+
+.created {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 1rem; }
+
+/*
+* === HOMEPAGE STYLES ===
+*/
+/*
+* === hero image ===
+*/
+.header--home {
+  box-shadow: none;
+  background: rgba(14, 8, 1, 0.87);
+  background: rgba(10, 16, 9, 0.96); }
+
+.hero {
+  background-image: url("../assets/pexels/couple.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: relative; }
+
+.nav__list {
+  display: flex;
+  margin: 1.5rem auto; }
+
+.nav__link--home:link, .nav__link--home:visited {
+  color: #f9f7f7; }
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem 0rem;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  left: 50%; }
+  .hero__text h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    color: #f9f7f7; }
+
+.header__button {
+  background: transparent;
+  color: #f9f7f7;
+  border: 2px solid #f9f7f7;
+  margin-top: 2rem;
+  transition: 0.3s ease; }
+  .header__button:hover {
+    background: #f9f7f7;
+    color: #4b4a4a; }
+
+.social--hero {
+  top: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+
+.social__img {
+  height: 60px;
+  padding: .4rem; }
+
+/*
+* === mission section===
+*/
+.mission {
+  margin: 5rem auto; }
+
+.mission__text {
+  background: #f9f7f7;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 3rem;
+  line-height: 2.3rem; }
+
+.mission__img {
+  background-image: url("../assets/pexels/couple-heart.jpg");
+  background-position: center center;
+  background-size: cover;
+  align-self: flex-end;
+  height: 30rem; }
+
+/*
+* === icon tiles section===
+*/
+.main-tiles h3 {
+  margin: 6rem auto 2rem auto; }
+
+.main-tiles h4 {
+  display: inline-block;
+  color: #563635;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid white; }
+
+.main-tiles p {
+  font-size: 1.1rem; }
+
+.icon-tiles__tile {
+  padding: 4rem 2rem 6rem 2rem;
+  transition: 0.5s ease-in-out; }
+
+.icon-tiles__tile:nth-child(odd) h4 {
+  border-bottom: 1px solid #7D6167; }
+
+.icon-tiles__tile:nth-child(even) {
+  background: #563635; }
+  .icon-tiles__tile:nth-child(even) h4, .icon-tiles__tile:nth-child(even) p {
+    color: white; }
+
+.icon-tiles__img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 80px; }
+
+.icon-tiles__img-one {
+  background-image: url("../assets/icons/bouquet.svg"); }
+
+.icon-tiles__img-two {
+  background-image: url("../assets/icons/church-hover.svg"); }
+
+.icon-tiles__img-three {
+  background-image: url("../assets/icons/wedding-cake.svg"); }
+
+.icon-tiles__img-four {
+  background-image: url("../assets/icons/camera-hover.svg");
+  height: 70px; }
+
+/*
+* === banner section ===
+*/
+.banner {
+  margin: 3rem auto 3rem auto;
+  background-image: url("../assets/pexels/banner-bg.jpeg");
+  background-position: center;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .banner h3 {
+    margin-bottom: 1.5rem; }
+
+.button--color {
+  background: #0e2113;
+  color: #f9f7f7; }
+
+/*
+* === SERVICES PAGE STYLES ===
+*/
+.services__text__descritpion {
+  padding: 4rem 2rem;
+  color: #f9f7f7;
+  background-image: url("../assets/pexels/bouqet-roses-purple-slim.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.services__text__heading {
+  max-width: 550px;
+  margin: 0 auto; }
+  .services__text__heading h4 {
+    color: #F0D6C4; }
+  .services__text__heading h2 {
+    color: #f9f7f7; }
+  .services__text__heading p {
+    margin-top: 1.3rem;
+    line-height: 33px;
+    font-size: 1.1rem; }
+
+.page-content--services {
+  padding-top: 10rem; }
+
+.offer__text__heading {
+  margin-top: 4rem; }
+
+.timeline {
+  top: 2rem;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 6rem auto; }
+
+.timeline__img {
+  height: 80px;
+  margin-bottom: 1.5rem; }
+
+.timeline__content {
+  padding: 2rem; }
+  .timeline__content p {
+    font-size: 1.1rem; }
+
+.timeline::after {
+  content: "";
+  width: 7px;
+  background: #A0A083;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 50%;
+  border-radius: 10px; }
+
+.timeline__container {
+  position: relative;
+  width: 50%;
+  border-radius: 8px; }
+
+.timeline__container::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #7D6167;
+  top: 10px;
+  right: -52px;
+  z-index: 1; }
+
+.timeline__left__container {
+  left: 0;
+  background: #f9f7f7; }
+
+.timeline__right__container {
+  left: 50%;
+  background: #563635;
+  color: #f9f7f7; }
+
+.timeline__right__container::after {
+  left: -48px; }
+
+.timeline__left__container::before {
+  content: '';
+  height: 0;
+  width: 0;
+  top: 10px;
+  left: -10px;
+  position: absolute;
+  z-index: 1;
+  border: medium solid #f9f7f7;
+  border-width: 15px 15px 15px 0px;
+  border-color: transparent #f9f7f7 transparent transparent; }
+
+.timeline__right__container::before {
+  content: '';
+  height: 0;
+  width: 0;
+  top: 10px;
+  left: -10px;
+  position: absolute;
+  z-index: 1;
+  border: medium solid #563635;
+  border-width: 15px 15px 15px 0px;
+  border-color: transparent #563635 transparent transparent; }
+
+/*
+* === PORTFOLIO PAGE STYLES ===
+*/
+.portfolio {
+  max-width: 1800px;
+  margin: 0 auto; }
+
+.portolio__text__heading {
+  margin-top: 2.5rem; }
+
+.portfolio-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+  grid-gap: 15px;
+  justify-content: center;
+  margin-bottom: 2.5rem; }
+
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.img-one {
+  background-image: url("../assets/pexels/wedding-room.jpeg"); }
+
+.img-two {
+  background-image: url("../assets/pexels/bouqets.jpeg"); }
+
+.img-three {
+  background-image: url("../assets/pexels/wedding-cake2.jpeg"); }
+
+.img-four {
+  background-image: url("../assets/pexels/couple-green.jpeg"); }
+
+.img-five {
+  background-image: url("../assets/pexels/couple-mountain.jpeg"); }
+
+.img-six {
+  background-image: url("../assets/pexels/table-decoration.jpeg"); }
+
+.img-seven {
+  background-image: url("../assets/pexels/bride-girls.jpeg"); }
+
+.img-eight {
+  background-image: url("../assets/pexels/decoration.jpeg"); }
+
+.img-nine {
+  background-image: url("../assets/pexels/bouqet-roses.jpeg"); }
+
+.img-ten {
+  background-image: url("../assets/pexels/couple-smile.jpeg"); }
+
+.img-eleven {
+  background-image: url("../assets/pexels/wedding-rings.jpeg"); }
+
+.img-twelve {
+  background-image: url("../assets/pexels/dress.jpeg"); }
+
+.img-thirteen {
+  background-image: url("../assets/pexels/decoration-pink.jpeg"); }
+
+.img-fourteen {
+  background-image: url("../assets/pexels/paris-wedding-crop.jpeg"); }
+
+.img-fifteen {
+  background-image: url("../assets/pexels/wooden.jpeg"); }
+
+.img-sixteen {
+  background-image: url("../assets/pexels/beach.jpeg"); }
+
+/*
+* === CONTACT PAGE STYLES ===
+*/
+.contact__text__heading {
+  margin-top: 2.5rem; }
+
+.contact-details {
+  background: #f9f7f7; }
+
+.contact-details__column {
+  padding-top: 2.7rem;
+  max-width: 300px;
+  margin: 0 auto; }
+  .contact-details__column h5 {
+    color: #563635;
+    font-weight: bold; }
+  .contact-details__column h5, .contact-details__column p {
+    line-height: 1.8rem; }
+  .contact-details__column p {
+    margin-top: 1rem;
+    font-size: 1.1rem; }
+
+.contact-details__address {
+  padding-bottom: 2.7rem; }
+
+.form__wrapper {
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  padding: 1.3rem; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: auto 2rem; }
+
+.form__label {
+  font-size: 1.2rem;
+  padding: 0.5rem 0.3rem; }
+
+.form__input, .form__select {
+  padding: 1rem 0.3rem; }
+
+.form__textarea {
+  height: 10rem;
+  border-radius: 10px; }
+
+.form__input, .form__textarea, .form__select {
+  background: #f9f7f7;
+  border: 1px solid #d8d5d5;
+  border-radius: 5px; }
+
+.form__label, .button--form {
+  margin-top: 1.7rem; }
+
+.input-submit {
+  cursor: pointer; }
+
+/*
+* === MEDIA QUERIES ===
+*/
+@media screen and (max-width: 880px) {
+  .timeline {
+    margin: 0 2rem 5rem 2rem; }
+  .timeline__container {
+    width: 100%;
+    margin-left: 1rem; }
+  .timeline__right__container {
+    left: 0;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem; }
+  .timeline::after {
+    left: -18px;
+    width: 5px; }
+  .timeline__container::after {
+    left: -45px;
+    width: 20px;
+    height: 20px; } }
+
+@media screen and (min-width: 881px) {
+  .footer__inner-wrapper {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center; }
+  .hero__text h1 {
+    font-size: 2.9rem; }
+  .nav__link {
+    font-size: 1.5rem; }
+  .button {
+    font-size: 1.5rem; }
+  .banner {
+    height: 30rem; }
+    .banner h3 {
+      font-size: 2.5rem; }
+  .timeline__left__container {
+    margin-left: -2rem; }
+  .timeline__left__container::before {
+    top: 12px;
+    left: 395px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #f9f7f7; }
+  .timeline__right__container {
+    margin-left: 2rem; }
+  .contact-details__inner-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex; }
+    .contact-details__inner-wrapper h5 {
+      margin-top: .6rem; }
+  .contact-details__column p {
+    font-size: 1.2rem; } }
+
+@media screen and (min-width: 1087px) {
+  .hero__text {
+    top: 55%; }
+  .social--hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    flex-direction: column;
+    margin-right: 4rem;
+    width: auto; }
+  .mission {
+    display: flex;
+    justify-content: center;
+    height: 40rem; }
+  .mission__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    margin-right: -3rem;
+    height: 30rem;
+    font-size: 1.3rem; }
+  .mission__img {
+    width: 45%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  .main-tiles p {
+    color: transparent; }
+  .icon-tiles__wrapper {
+    display: flex; }
+  .icon-tiles__tile {
+    margin: 0.5rem;
+    width: 25%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
+    .icon-tiles__tile:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      width: 30%; }
+  .icon-tiles__img-two {
+    background-image: url("../assets/icons/church.svg"); }
+  .icon-tiles__img-four {
+    background-image: url("../assets/icons/camera.svg");
+    height: 70px; }
+  .icon-tiles__one:hover .icon-tiles__img-one {
+    background-image: url("../assets/icons/bouquet-hover.svg"); }
+  .icon-tiles__two:hover .icon-tiles__img-two {
+    background-image: url("../assets/icons/church-hover.svg"); }
+  .icon-tiles__three:hover .icon-tiles__img-three {
+    background-image: url("../assets/icons/wedding-cake-hover.svg"); }
+  .icon-tiles__four:hover .icon-tiles__img-four {
+    background-image: url("../assets/icons/camera-hover.svg"); }
+  .icon-tiles__tile:nth-child(odd) h4 {
+    border-bottom: none; }
+  .icon-tiles__tile:nth-child(odd):hover h4 {
+    border-bottom: 1px solid #f9f7f7; }
+  .icon-tiles__tile:nth-child(even) {
+    background: none; }
+    .icon-tiles__tile:nth-child(even) h4 {
+      color: #563635; }
+  .icon-tiles__tile {
+    border-radius: 10px; }
+    .icon-tiles__tile:hover {
+      background: #563635; }
+      .icon-tiles__tile:hover h4, .icon-tiles__tile:hover p {
+        color: #f9f7f7; }
+  .icon-tiles__camera .img {
+    height: 30px; }
+  .form__label {
+    font-size: 1.5rem; } }
